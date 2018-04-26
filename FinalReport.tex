@@ -1,0 +1,125 @@
+
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{lscape}
+\usepackage{listings}
+\usepackage{graphicx} % Allows for importing of figures
+\usepackage{color} % Allows for fonts to be colored
+\usepackage{comment} % Allows for comments to be made
+\usepackage{accents} % Allows for accents to be made above and below text
+%\usepackage{undertilde} % Allows for under tildes to take place for vectors and tensors
+\usepackage[table]{xcolor}
+\usepackage{array,ragged2e}
+\usepackage{hyperref}
+\usepackage{framed} % Allows boxes to encase equations and such
+\usepackage{subcaption} % Allows for figures to be side-by-side
+\usepackage{float} % Allows for images to not float in the document
+\usepackage{booktabs}
+%\usepackage[margin=0.75in]{geometry}
+\usepackage[final]{pdfpages}
+\usepackage{enumitem}
+\usepackage[section]{placeins}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%  Function used to generate vectors and tensors %%%%%%%%%
+\usepackage{stackengine}
+\stackMath
+\newcommand\tensor[2][1]{%
+	\def\useanchorwidth{T}%
+	\ifnum#1>1%
+	\stackunder[0pt]{\tensor[\numexpr#1-1\relax]{#2}}{\scriptscriptstyle \sim}%
+	\else%
+	\stackunder[1pt]{#2}{\scriptscriptstyle \sim}%
+	\fi%
+}
+%%%%%%%%%%%%%%%%%%%
+
+\definecolor{mygrey}{rgb}{0.97,0.98,0.99}
+\definecolor{codeblue}{rgb}{.2,0,1}
+\definecolor{codered}{rgb}{1,0,0}
+\definecolor{codegreen}{rgb}{0.3,0.33,0.12}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.55,0.0,0.55}
+\definecolor{codecyan}{rgb}{0.0,.4,.4}
+
+\lstdefinestyle{mystyle}{
+	backgroundcolor=\color{mygrey},   
+	commentstyle=\color{codegreen},
+	keywordstyle=\color{codeblue},
+	stringstyle=\color{codepurple},
+	numberstyle=\tiny\color{codegray},
+	basicstyle=\footnotesize,
+	breakatwhitespace=false,         
+	breaklines=true,                 
+	captionpos=b,                    
+	keepspaces=true, 
+	numbers=left,                    
+	numbersep=5pt,                  
+	showspaces=false,                
+	showstringspaces=false,
+	showtabs=false,                  
+	tabsize=2
+}
+\lstset{style=mystyle}
+
+\lstset{language=Matlab,backgroundcolor=\color{mygrey}}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+%%%\lhead{\large{Nik Benko, Peter Creveling}} 
+%\chead{\large{\textbf{Automatic Segmentation of Micro CT Images \\  \normalsize{ME EN 6035 Final Project} \\ \small{Nik Benko, Peter Creveling}}}}
+%\rhead{\today}
+\cfoot{[\thepage\ of \pageref{LastPage}]}
+\fancyheadoffset{.5cm}
+\setlength{\parindent}{0cm}
+\usepackage[left=.5in, right=0.50in, top=1.00in,bottom=1.00in]{geometry}
+\usepackage{microtype} 
+\usepackage{setspace}
+\doublespace
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% git testing ii
+
+\begin{document}
+\title{ Automatic Segmentation of Micro CT Images  \\ \normalsize{ME EN 6035 Final Project}}
+\author{Nik Benko and Peter Creveling}
+\maketitle
+
+
+\begin{abstract} 
+
+\end{abstract}
+
+\section{Introduction and Background}
+
+\section{Materials and Methods}
+
+\subsection{Composite CMC Micro CT } 
+
+\subsection{Data}
+
+\subsection{Statistical Analysis} 
+
+
+\section{Results and Discussion} 
+
+\subsection{Error and Uncertainties} 
+
+\section{Conclusion and Future Directions} 
+
+\section{Figures}
+
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=1\textwidth]{TestSetUp.png}
+%	\caption{Experimental setup of the Split Hopkinson Pressure Bar}
+%	\label{fig:TestSetup}
+%\end{figure}
+
+
+
+
+%\newpage
+%\bibliographystyle{IEEEtran}
+%\bibliography{Lab3Bib}
+\end{document}
