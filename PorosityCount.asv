@@ -93,9 +93,9 @@ x=-1:0.1:1; y=x;
 f=c(1)+c(2)*X+c(3)*Y+c(4)*X.*Y;
 figure;
 %[C,h]=contourf(X,Y,f);
-surf(X,Y,f,'FaceColor','interp',...
+hsurf=surf(X,Y,f,'FaceColor','interp',...
     'EdgeColor','none',...
-    'FaceLighting','phong')
+    'FaceLighting','phong');
 daspect([1 1 100])
 axis tight
 view(+120,30)
