@@ -54,6 +54,8 @@ hold on
 plot(1:L,manualPorosity,1:L,auto2DPorosity,1:L,auto3DPorosity,1:L,erode2DPorosity,1:L,erode3DPorosity)
 hold off
 legend('Manual','Auto2D','Auto3D','Erode2D','Erode3D')
+xlabel('Image Number')
+ylabel('Porosity')
 %% One Way Anova and Tukey's HSD
 
 Data=[manualPorosity,auto2DPorosity,auto3DPorosity,erode2DPorosity,erode3DPorosity];
