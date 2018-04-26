@@ -29,6 +29,7 @@ for i=1:L
     
     while i==1
         topEdges=bw3-erode2;
+        topSeg=bw3;
         break
     end
     
@@ -93,12 +94,13 @@ x=-1:0.1:1; y=x;
 f=c(1)+c(2)*X+c(3)*Y+c(4)*X.*Y;
 figure;
 %[C,h]=contourf(X,Y,f);
-surf(X,Y,f,'FaceColor','interp',...
-    'EdgeColor','none',...
-    'FaceLighting','phong')
+% surf(X,Y,f,'FaceColor','interp',...
+%     'EdgeColor','none',...
+%     'FaceLighting','phong')
+surf(X,Y,f)
 daspect([1 1 100])
 axis tight
-view(+120,30)
+view(+115,30)
 camlight left)
 xlabel('Analysis Demension')
 ylabel('Erosion')
@@ -106,7 +108,11 @@ d=colorbar;
 d.Label.String='% Error';
 d.FontSize=18;
 set(gca,'FontSize',18)
-
+surfax=gca;
+surfax.XTick=[-1 1];
+surfax.YTick=[-1 1];
+surfax.YTickLabel={'None','1 Pixel'};
+surfax.XTickLabel={'2D','3D'};
 %anovan(Diff,{'2D','3D','2D erode','3D erode'})
 %% Image Overlay
 overlay=zeros(500,500,3);
@@ -117,13 +123,52 @@ red=topImage;
 blue=topImage;
 green=topImage;
 red(topEdges==1)=255;
-blue(topEdges==1)=0;
+blue(topSeg==1)=255;
 green(topEdges==1)=0;
 overlay(:,:,1)=red;
 overlay(:,:,2)=green;
 overlay(:,:,3)=blue;
 figure; imshow(uint8(overlay))
 
+%% Histograms
+figure;
+h1=histogram(Data(:,1));
+hold on
+h2=histogram(Data(:,2));
+h3=histogram(Data(:,3));
+h4=histogram(Data(:,4));
+h5=histogram(Data(:,5));
+
+h1.Normalization = 'probability';
+h2.Normalization = 'probability';
+h3.Normalization = 'probability';
+h4.Normalization = 'probability';
+h5.Normalization = 'probability';
+
+xlabel('Porosity')
+ylabel('Probability')
+set(gca,'FontSize',16)
+legend('Manual','Auto2D','Auto3D','Erode2D','Erode3D')
+%% Diff Histograms
+figure;
+h1=histogram(Diff(:,1));
+hold on
+h2=histogram(Diff(:,2));
+h3=histogram(Diff(:,3));
+h4=histogram(Diff(:,4));
+
+
+h1.Normalization = 'probability';
+h2.Normalization = 'probability';
+h3.Normalization = 'probability';
+h4.Normalization = 'probability';
+
+
+xlabel('% Error')
+ylabel('Probability')
+set(gca,'FontSize',16)
+legend('Auto2D','Auto3D','Erode2D','Erode3D')
+title('Difference Histograms')
 %%
 
 % diff=autoPorosity-manualPorosity;
