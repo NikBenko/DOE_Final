@@ -1,5 +1,8 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: FinalReport.aux
-I found no \citation commands---while reading file FinalReport.aux
-I found no \bibdata command---while reading file FinalReport.aux
-I found no \bibstyle command---while reading file FinalReport.aux
-(There were 3 error messages)
+The style file: IEEEtran.bst
+Database file #1: DoE_References.bib
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.

@@ -87,21 +87,23 @@
 
 
 \begin{abstract} 
-
+In this study, the accuracy of a novel automatic based segmentation pipeline was statistically compared to manual based methods. Segmentation was performed on Fiber-reinforced ceramic matrix composites in order to extract porosity from the surrounding microscturcture. Statistical techniques used to analyze significance included one-way and two-way ANOVA, Tukey's HSD, and 2$\times$2 factorial design. It was found that using a combination of pre-processed filtering, 3D Weka machine learning segmentation, and post-process erosion had the most agreement with manual segmentation.
 \end{abstract}
 
 \section{Introduction and Background}
 
-Fiber-reinforced ceramic matrix composites (CMCs) are widely used in the aerospace industry due to their high specific strength and stiffness material properties, and their ability to withstand prolonged exposure to extreme high-temperature and oxidative environments. Despite their increased use, the fundamental physics governing their manufacturing, stochastic microstructure, and long-term structural performance remains largely undiscovered. Understanding the complete life-cycle of CMCs is critical towards improving currently existing and future applications of CMCs. In recent years, the emerging practice of in situ X-ray micro-computed tomography (X-ray µCT) experiments has proven promising towards providing a holistic understanding into the behavior of CMCs on multiple length scales [1-6].\\
-Unique to X-ray µCT is the ability to image specimens through-thickness in 3-D compared to other surface specific imaging techniques. However, this imaging method comes at a high computational post processing price to analyze terabytes of potential image data. There exist active areas of research in improving best practices for the segmentation of X-ray µCT reconstructions to extract useful properties. Segmentation is defined as the classification of pixels or groups of pixels into multiple segments. These segments often correspond to a physical representation. There is no one segmentation method that works universally. Segmentation is often tailored towards the users’ needs my means of manual or automatic practices. To date, manual segmentation is heavily used due to the knowledge humans use when classifying individual pixels compared to computer based methods. Once trained, computer based methods significantly out produce humans in computational time, and are therefore more desirable.\\
-In this study, a novel segmentation pipeline was developed to accurately segment porosity automatically from the microstructure of CMCs imaged via X-ray µCT. A statistical validation was performed to compare the differences in segmentation ability of porosity between the novel automatic method and the manual segmentation based method. It was hypothesized that the mean percent error in porosity segmentation for the novel segmentation method was equal to zero under the assumption that the manual based method was considered ground truth. The alternative was the mean percent error in automatic porosity segmentation was greater than zero.
+Fiber-reinforced ceramic matrix composites (CMCs) are widely used in the aerospace industry due to their high specific strength and stiffness material properties, and their ability to withstand prolonged exposure to extreme high-temperature and oxidative environments. Despite their increased use, the fundamental physics governing their manufacturing, stochastic microstructure, and long-term structural performance remains largely undiscovered. Understanding the complete life-cycle of CMCs is critical towards improving currently existing and future applications of CMCs. In recent years, the emerging practice of in situ X-ray micro-computed tomography (X-ray $\mu$CT) experiments has proven promising towards providing a holistic understanding into the behavior of CMCs on multiple length scales \cite{Larson,Bale,Bale2,Cox,Haboub,Marshall}.\\
+Unique to X-ray $\mu$CT is the ability to image specimens through-thickness in 3-D compared to other surface specific imaging techniques. However, this imaging method comes at a high computational post processing price to analyze terabytes of potential image data. There exist active areas of research in improving best practices for the segmentation of X-ray $\mu$CT reconstructions to extract useful properties. Segmentation is defined as the classification of pixels or groups of pixels into multiple segments. These segments often correspond to a physical representation. There is no one segmentation method that works universally. Segmentation is often tailored towards the users’ needs my means of manual or automatic practices. To date, manual segmentation is heavily used due to the knowledge humans use when classifying individual pixels compared to computer based methods. Once trained, computer based methods significantly out produce humans in computational time, and are therefore more desirable.\\
+In this study, a novel segmentation pipeline was developed to accurately segment porosity automatically from the microstructure of CMCs imaged via X-ray $\mu$CT. A statistical validation was performed to compare the differences in segmentation ability of porosity between the novel automatic method and the manual segmentation based method. It was hypothesized that the mean percent error in porosity segmentation for the novel segmentation method was equal to zero under the assumption that the manual based method was considered ground truth. The alternative was the mean percent error in automatic porosity segmentation was greater than zero.
 
 
 \section{Materials and Methods}
 
-\subsection{Composite CMC Micro CT } 
+\subsection{Composite CMC and X-ray $\mu$CT}
+This study is an extension of current research being performed in the Utah Composites lab where X-ray $\mu$CT is being utilized to image the entire multi-step manufacturing process of CMCs combined with \textit{in situ} testing during extreme environments. The end goal is to fully quantify the changes of the CMC microstructure throughout their entire life-cycle via methods of segmentation. The composite system used consisted of a 8HS satin weave CG Nicalon-fiber fabric infiltrated with SMP-10 resin. Imaging was performed using a Zeiss Versa-520 X-ray CT 3D microscope at the Air Force Research Laboratory (Dayton, OH). In this study, images were analyzed from the pyrolysis step of the manufacturing process after which the resin was cured at 1000$^{\circ}$C.
 
 \subsection{Data}
+Image data analyzed was collected after a scan time 37.3 hours from a small region of interest (ROI) from the entire CMC specimen. There were 1980 8-bit images collected with a spatial resolution of 1.21 $\mu$m/voxel. In total, the entire image stack consisted of 22.1GB of information. For this study, a small sub-volume of 500$\times$500$\times$500 pixels analyzed. Within this sub-volume, both manual and automatic segmentation was performed in order to extract porosity (e.g. cracks or voids) from the surrounding microstructure. It is assumed that the manual segmentation based method of porosity is considered ground truth to compare the accuracy of the automatic segmentation.
 
 \subsection{Statistical Analysis} 
 Several different statistical techniques were used to evaluate segmentation algorithms. First a one-way ANOVA was conducted on the porosity measurements for each technique to determine whether or not automatic calculations of porosity were significantly different from manual calculations. A multiple comparisons analysis (Tukey's HSD) was then conducted to determine which methods, if any, were significantly different.\\
@@ -133,8 +135,6 @@ An additional data set was constructed by calculating the percent error between 
 
 \section{Conclusion and Future Directions} 
 
-\section{Figures}
-
 %\begin{figure}[H]
 %	\centering
 %	\includegraphics[width=1\textwidth]{TestSetUp.png}
@@ -143,9 +143,7 @@ An additional data set was constructed by calculating the percent error between 
 %\end{figure}
 
 
+\bibliographystyle{IEEEtran}
+\bibliography{DoE_References}
 
-
-%\newpage
-%\bibliographystyle{IEEEtran}
-%\bibliography{Lab3Bib}
 \end{document}
