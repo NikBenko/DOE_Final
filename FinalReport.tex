@@ -99,10 +99,31 @@
 \subsection{Data}
 
 \subsection{Statistical Analysis} 
+Several different statistical techniques were used to evaluate segmentation algorithms. First a one-way ANOVA was conducted on the porosity measurements for each technique to determine whether or not automatic calculations of porosity were significantly different from manual calculations. A multiple comparisons analysis (Tukey's HSD) was then conducted to determine which methods, if any, were significantly different.\\
 
+An additional data set was constructed by calculating the percent error between each of the automatically segmented results and the manually segmented results. This data was no longer dependent on the underlying image and could be treated as a random variable. Normality of data was checked by plotting the histograms for each automatic method. Finally, the four automatic methods segmentations were broken into two categories based on algorithm features with "high" and "low" treatments for each category. A 2 by 2 factorial and 2-way ANOVA were performed to determine which algorithm features (Analysis Dimensions and Edge Erosion), most effected the results. 
 
 \section{Results and Discussion} 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{DataHistograms.png}
+	\caption{Histogram of porosity distribution for each segmentation method}
+	\label{fig:DataHist}
+\end{figure}
 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{DifferenceHistograms.png}
+	\caption{Histogram of percent error for each of the automatic segmentation methods}
+	\label{fig:DiffHist}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{ResponseSurface.png}
+	\caption{Response surface model for two different algorithm features}
+	\label{fig:Surf}
+\end{figure}
 \subsection{Error and Uncertainties} 
 
 \section{Conclusion and Future Directions} 
