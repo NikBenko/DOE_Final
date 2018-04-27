@@ -1,5 +1,5 @@
 
-\documentclass[12pt]{article}
+\documentclass[11pt, twocolumn]{article}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{mathrsfs}
@@ -21,7 +21,7 @@
 \usepackage[final]{pdfpages}
 \usepackage{enumitem}
 \usepackage[section]{placeins}
-
+\usepackage{cite}
 %%%%%%%%%%%%%%%%%%%%%%%%%  Function used to generate vectors and tensors %%%%%%%%%
 \usepackage{stackengine}
 \stackMath
@@ -113,25 +113,26 @@ An additional data set was constructed by calculating the percent error between 
 \section{Results and Discussion} 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{DataHistograms.png}
+	\includegraphics[width=0.5\textwidth]{DataHistograms.png}
 	\caption{Histogram of porosity distribution for each segmentation method}
 	\label{fig:DataHist}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{DifferenceHistograms.png}
+	\includegraphics[width=0.5\textwidth]{DifferenceHistograms.png}
 	\caption{Histogram of percent error for each of the automatic segmentation methods}
 	\label{fig:DiffHist}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=1\textwidth]{ResponseSurface.png}
+	\includegraphics[width=0.5\textwidth]{ResponseSurface.png}
 	\caption{Response surface model for two different algorithm features}
 	\label{fig:Surf}
 \end{figure}
 \subsection{Error and Uncertainties} 
+
 
 \section{Conclusion and Future Directions} 
 
@@ -143,7 +144,7 @@ An additional data set was constructed by calculating the percent error between 
 %\end{figure}
 
 
-\bibliographystyle{IEEEtran}
+\bibliographystyle{ieeetr}
 \bibliography{DoE_References}
 
 \end{document}
