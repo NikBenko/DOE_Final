@@ -87,14 +87,14 @@
 
 
 \begin{abstract} 
-In this study, the accuracy of a novel automatic segmentation method was statistically compared to a manual segmentation method. Segmentation was performed on fiber-reinforced ceramic matrix composites in order to extract porosity from the surrounding microscturcture. Four different automatic segmentation methods were investigated. Statistical analysis was performed to determine how the methods compared. It was found that using a combination of pre-segmentation filtering, 3D machine learning segmentation, and post-process edge erosion had the best agreement with manual segmentation of the methods evaluated.
+In this study, the accuracy of automatic segmentation methods were statistically compared to a manual segmentation method. Segmentation was performed on $\mu$CT images of fiber-reinforced ceramic matrix composites in order to extract porosity from the surrounding microscturcture. Four different automatic segmentation methods were investigated. Statistical analysis was performed to determine how the methods compared. It was found that using a combination of pre-segmentation filtering, 3D machine learning segmentation, and post-process edge erosion had the best agreement with manual segmentation.
 \end{abstract}
 
 \section{Introduction and Background}
 
 Fiber-reinforced ceramic matrix composites (CMCs) are widely used in the aerospace industry due to their high specific strength, high stiffness, and their ability to withstand prolonged exposure to extreme high-temperature and oxidative environments. Despite their increased use, the physics governing their manufacturing, stochastic microstructure, and long-term structural performance remains an active area of research. Understanding the complete life-cycle of CMCs is critical towards improving  existing and future applications of CMCs. In recent years, the emerging practice of in situ X-ray micro-computed tomography (X-ray $\mu$CT) experiments has proven useful for providing a holistic understanding of the behavior of CMCs on multiple length scales \cite{Larson,Bale,Bale2,Cox,Haboub,Marshall}.\\
-Unique to X-ray $\mu$CT is the ability to take through-thickness images of specimens in 3-D. This provides much more information compared to other 2-D surface based techniques. However, processing these images to extract information comes at high computational costs. One of the most common imaging processing operations is segmentation, in which pixels are categorized into two more groups that correspond to some characteristic of the material being imaged. For example, CMC images are often segmented to distinguish between fibers and the surrounding epoxy matrix. There exist active areas of research in improving best practices for the segmentation of X-ray $\mu$CT reconstructions. Segmentation techniques vary widely depending on image properties such as noise characteristics, contrast between segments, and edge sharpness. X-ray $\mu$CT of large specimens results in image with significant noise and edge softness, making automatic segmentation challenging. Researchers have largely relied on manual segmentation, in which a user classifies each pixel by hand. While accurate, this method is very time consuming and impractical for processing of large data sets. For this reason the development of an automated method of segmentation is desired.\\
-In this study, several automatic segmentation strategies were constructed and tested against a manually segmented data set to determine accuracy. Slices of a 3-D X-ray $\mu$CT image data set were segmented to calculate the porosity of each slice. A statistical validation was performed to compare the differences in segmentation ability between the automatic methods and the manual segmentation method.
+Unique to X-ray $\mu$CT is the ability to take through-thickness images of specimens in 3-D. This provides much more information compared to other 2-D surface based techniques. However, processing these images to extract information comes at high computational costs. One of the most common imaging processing operations is segmentation, in which pixels are categorized into two more groups that correspond to some characteristic of the material being imaged. For example, CMC images are often segmented to distinguish between fibers and the surrounding epoxy matrix. There exist active areas of research in improving best practices for the segmentation of X-ray $\mu$CT reconstructions. Segmentation techniques vary widely depending on image properties such as noise characteristics, contrast between segments, and edge sharpness. X-ray $\mu$CT of large specimens \textbf{( on the order of ?)} results in image with significant noise and edge softness, making automatic segmentation challenging. Researchers have largely relied on manual segmentation, in which a user classifies each pixel by hand. While accurate, this method is very time consuming and impractical for processing of large data sets. For this reason the development of an automated method of segmentation is desired.\\
+In this study, several automatic segmentation strategies were constructed and tested against a manually segmented data set to determine accuracy. Slices of a 3-D X-ray $\mu$CT image data set were segmented to calculate the porosity of each slice. Porosity was defined as the number of pixels representing materials other than carbon fibers, divided by the total number of pixels in the image. A statistical validation was performed to compare the differences in segmentation ability between the automatic methods and the manual segmentation method.
 
 \section{Materials and Methods}
 
@@ -102,35 +102,40 @@ In this study, several automatic segmentation strategies were constructed and te
 This study is an extension of current research being performed in the Utah Composites lab where X-ray $\mu$CT is being utilized to image the entire multi-step manufacturing process of CMCs combined with \textit{in situ} testing during extreme environments. The end goal is to fully quantify the changes of the CMC microstructure throughout their entire life-cycle via methods of segmentation. The composite system used consisted of a 8HS satin weave CG Nicalon-fiber fabric infiltrated with SMP-10 resin. Imaging was performed using a Zeiss Versa-520 X-ray CT 3D microscope at the Air Force Research Laboratory (Dayton, OH). In this study, images were analyzed from the pyrolysis step of the manufacturing process after which the resin was cured at 1000$^{\circ}$C.
 
 \subsection{Data}
-Image were collected with a scan time of 37.3 hours. A small region of interest (ROI) from the entire CMC specimen was selcted for analysis. There were 1980 8-bit images collected with a spatial resolution of 1.21 $\mu$m/voxel. In total, the entire image stack consisted of 22.1GB of information. For this study, a small sub-volume of 500$\times$500$\times$500 pixels analyzed. Within this sub-volume, both manual and automatic segmentation were performed in order to extract porosity (e.g. cracks or voids) from the surrounding microstructure. It is assumed that the manual segmentation based method of porosity is considered ground truth to compare the accuracy of the automatic segmentation.
+Image were collected with a scan time of 37.3 hours. A small region of interest (ROI) from the entire CMC specimen was selcted for analysis. There were 1980 8-bit images collected with a spatial resolution of 1.21 $\mu$m/voxel. In total, the entire image stack consisted of 22.1GB of information. For this study, a small sub-volume of 500$\times$500$\times$500 pixels analyzed. Within this sub-volume, both manual and automatic segmentation were performed in order to extract porosity (e.g. cracks or voids) from the surrounding microstructure. It is assumed that the manual segmentation based method of porosity is the "ground truth" to compare the accuracy of the automatic segmentation.
+
+\subsection{Automatic Segmentation Methods}
+
 
 \subsection{Statistical Analysis} 
 Several different statistical techniques were used to evaluate segmentation algorithms. First a one-way ANOVA was conducted on the porosity measurements for each technique to determine whether or not automatic calculations of porosity were significantly different from manual calculations. Here the null hypothesis is that all methods result in the same mean porosity measurement for the image set. They alternative hypothesis is that some means are not equal. A multiple comparisons analysis (Tukey's HSD) was then conducted to test multiple alternative hypothesis and determine which methods, if any, were significantly different.\\
 
-An additional data set was constructed by calculating the percent error between each of the automatically segmented results and the manually segmented results. This data was no longer dependent on the underlying image and could be treated as a random variable. Normality of data was checked by plotting the histograms for each automatic method. Finally, the four automatic methods segmentations were broken into two categories based on algorithm features with "high" and "low" treatments for each category. A 2 by 2 factorial and 2-way ANOVA were performed to determine which algorithm features (Analysis Dimensions and Edge Erosion), most effected the results. 
+An additional data set was constructed by calculating the percent error between each of the automatically segmented results and the manually segmented results. This data was no longer dependent on the underlying image and could be treated as a random variable. Normality of data was checked by plotting the histograms for each automatic method. Finally, the four automatic methods segmentations were broken into two categories based on algorithm features with "high" and "low" treatments for each category. A 2 by 2 factorial and 2-way ANOVA were performed to determine which algorithm features, Analysis Dimensions and Edge Erosion, most effected the results. 
 
-\section{Results and Discussion} 
+\section{Results and Discussion}
+Histograms of the porosity calculations are shown in Figure \ref{fig:DataHist}. The histograms reveal that most data sets do not meet the condition of normality and contain a heavy left skew. This is in fact not surprising as the porosity measurement is based on image content, which is not a random variable. Mean porosity and standard deviation (STD) are listed in Table \ref{tab:DataTable}. Results from the one-way ANOVA \ref{tab:OneWay} and multiple comparisons \ref{tab:mult} test show that there are significant differences in the means of all of the methods except between the manual segmentation and 3-D algorithm with edge erosion correction. 
+
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.5\textwidth]{DataHistograms.png}
 	\caption{Histogram of porosity distribution for each segmentation method}
 	\label{fig:DataHist}
 \end{figure}
-
-\begin{figure}[H]
+% Table generated by Excel2LaTeX from sheet 'Sheet1'
+\begin{table}[htbp]
 	\centering
-	\includegraphics[width=0.5\textwidth]{DifferenceHistograms.png}
-	\caption{Histogram of percent error for each of the automatic segmentation methods}
-	\label{fig:DiffHist}
-\end{figure}
-
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=0.5\textwidth]{ResponseSurface.png}
-	\caption{Response surface model for two different algorithm features}
-	\label{fig:Surf}
-\end{figure}
-
+	\caption{Porosity Calculations}
+	\begin{tabular}{|l|r|r|r|r|r|}
+		\toprule
+		Method & \multicolumn{1}{c|}{Manual} & \multicolumn{1}{c|}{2D} & \multicolumn{1}{c|}{3D} & \multicolumn{1}{c|}{2D EE} & \multicolumn{1}{c|}{3D EE} \\
+		\midrule
+		Mean  & 0.0599 & 0.1143 & 0.1035 & 0.0715 & 0.0651 \\
+		\midrule
+		STD   & 0.0316 & 0.0322 & 0.0341 & 0.0311 & 0.0334 \\
+		\bottomrule
+	\end{tabular}%
+	\label{tab:DataTable}%
+\end{table}%
 % Table generated by Excel2LaTeX from sheet 'Sheet1'
 \begin{table}[htbp]
 	\centering
@@ -144,8 +149,48 @@ An additional data set was constructed by calculating the percent error between 
 		Total & 3.82096 & 2494  &       &       &  \\
 		\bottomrule
 	\end{tabular}%
-	\label{tab:addlabel}%
+	\label{tab:OneWay}%
 \end{table}%
+
+Histograms of percent error calculations in \ref{fig:DiffHist} show that these data are normally distributed. This difference, with respect to the distribution of raw porosity data, can be understood by considering that the percent difference is no longer highly dependent on the image content, but rather on the segmentation method. This allows the percent error to be considered a random variable for further analysis. Mean error and standard deviation are listed in Table \ref{tab:DiffTable}. As expected from the prior analysis, the 3-D with edge erosion algorithm displayed the lowest error and standard deviation, indicating that it is the desired method of analysis. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{DifferenceHistograms.png}
+	\caption{Histogram of percent error for each of the automatic segmentation methods}
+	\label{fig:DiffHist}
+\end{figure}
+% Table generated by Excel2LaTeX from sheet 'Sheet2'
+\begin{table}[htbp]
+	\centering
+	\caption{Percent Error Calculations}
+	\begin{tabular}{|l|r|r|r|r|}
+		\toprule
+		Meathod & \multicolumn{1}{c|}{2D} & \multicolumn{1}{c|}{3D} & \multicolumn{1}{c|}{2D EE} & \multicolumn{1}{c|}{3D EE} \\
+		\midrule
+		Mean  & 104.21 & 82.56 & 22.33 & 9.22 \\
+		\midrule
+		STD   & 29.05 & 23.18 & 11.21 & 11.00 \\
+		\bottomrule
+	\end{tabular}%
+	\label{tab:DiffTable}%
+\end{table}%
+
+Finally, the factorial analysis resulted in the following linear regression equation:
+\begin{multline}
+Percent Error= 54.5790 - 8.6906 X_A \\
+- 38.8059 X_B + 2.1367 X_A X_B
+\end{multline}
+Where $X_A and X_B$ represent the coded variables for analysis dimension and edge erosion respectively. A response surface is plotted in Figure \ref{fig:Surf}. This analysis shows that the pixel erosion contributes more to segmentation accuracy than the dimensionality of the Weka segmentation algorithm. This result could be useful for applying these techniques to larger data sets where computer memory becomes a limiting factor for 3-D.  methods. The results of the two-way ANOVA in Table \ref{tab:TwoWay} show that all effects measured in the factorial analysis were statistically significant. 
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{ResponseSurface.png}
+	\caption{Response surface model for two different algorithm features}
+	\label{fig:Surf}
+\end{figure}
+
+
 
 % Table generated by Excel2LaTeX from sheet 'Sheet2'
 \begin{table}[htbp]
@@ -155,30 +200,25 @@ An additional data set was constructed by calculating the percent error between 
 		\toprule
 		\multicolumn{1}{|c}{Factor} & \multicolumn{1}{c}{SS} & \multicolumn{1}{c}{DF} & \multicolumn{1}{c}{MS} & \multicolumn{1}{c}{F} & \multicolumn{1}{c|}{P } \\
 		\midrule
-		Dimensionality & 15.075 & 1     & 15.08 & 370.4 & 0 \\
-		Edge Erosion & 300.577 & 1     & 300.58 & 7386.0 & 0 \\
+		Dimensionality & 15.08 & 1     & 15.08 & 370.4 & 0 \\
+		Edge Erosion & 300.58 & 1     & 300.58 & 7386.0 & 0 \\
 		Interaction & 0.911 & 1     & 0.911 & 22.39 & 0 \\
-		Error & 81.066 & 1992  & 0.041 &       &  \\
-		Total & 397.629 & 1995  &       &       &  \\
+		Error & 81.07 & 1992  & 0.041 &       &  \\
+		Total & 397.63 & 1995  &       &       &  \\
 		\bottomrule
 	\end{tabular}%
-	\label{tab:addlabel}%
+	\label{tab:TwoWay}%
 \end{table}%
 
 
 \subsection{Error and Uncertainties} 
-
+Image analysis and segmentation are inherently prone to error. Digital imaging captures light reflected by, or transmitted through a continuous media and records discretized values of light intensity. If image discretization does not exactly match boundaries within the image subject, distortion and blurring of edges will occur. Image noise further confounds the distinction of image contents. The human visual system is effective at interpreting image contents, but interpretation can vary widely from person to person.\\
+The analysis here used manually segmented images as a "ground truth" for comparison between methods, but the chosen segmentation could have easily contained slight variations if another person had conducted the segmentation. The attractiveness of automatic segmentation lies in both its speed \textit{and} repeatability. Until imaging tools are capable of producing sharp enough images that there are no questionable "edge cases" for segmentation, there will always remain some small unquantifiable uncertainty in segmentation methods. However, by using the same algorithm across data sets for the purpose of comparison, this uncertainty can be ignored because it is present in all data sets.
 
 
 \section{Conclusion and Future Directions} 
 
-%\begin{figure}[H]
-%	\centering
-%	\includegraphics[width=1\textwidth]{TestSetUp.png}
-%	\caption{Experimental setup of the Split Hopkinson Pressure Bar}
-%	\label{fig:TestSetup}
-%\end{figure}
-
+In summary, this work demonstrates the ability of an automatic segmentation algorithm to produce results with no statistically significant differences from a manually segmented $\mu$CT image data set. Average error of less than 10\% was achieved. It is possible that this value can be further reduced by additional training to the underlying neural network. Pixel erosion was shown to be an effective method to compensate for the networks tendency to over-predict image porosity. Future work will include additional testing of the algorithms presented here on full-volume data sets.
 
 \bibliographystyle{ieeetr}
 \bibliography{DoE_References}

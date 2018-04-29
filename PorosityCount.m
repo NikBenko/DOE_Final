@@ -134,12 +134,12 @@ figure; imshow(uint8(overlay))
 
 %% Histograms
 figure;
-h1=histogram(Data(:,1));
+h1=hist(Data(:,1));
 hold on
-h2=histogram(Data(:,2));
-h3=histogram(Data(:,3));
-h4=histogram(Data(:,4));
-h5=histogram(Data(:,5));
+h2=hist(Data(:,2));
+h3=hist(Data(:,3));
+h4=hist(Data(:,4));
+h5=hist(Data(:,5));
 
 h1.Normalization = 'probability';
 h2.Normalization = 'probability';
@@ -153,11 +153,11 @@ set(gca,'FontSize',16)
 legend('Manual','Auto2D','Auto3D','Erode2D','Erode3D')
 %% Diff Histograms
 figure;
-h1=histogram(Diff(:,1));
+h1=hist(Diff(:,1));
 hold on
-h2=histogram(Diff(:,2));
-h3=histogram(Diff(:,3));
-h4=histogram(Diff(:,4));
+h2=hist(Diff(:,2));
+h3=hist(Diff(:,3));
+h4=hist(Diff(:,4));
 
 
 h1.Normalization = 'probability';
