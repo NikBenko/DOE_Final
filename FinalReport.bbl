@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{1}
 
 \bibitem{Larson}
 N.~Larson and F.~Zok, ``In-situ 3d visualization of composite microstructure
@@ -29,24 +29,9 @@ A.~Haboub, H.~Bale, and et~al., ``Tensile testing of materials at high
 D.~Marshall and B.~Cox, ``Integral textile ceramic structures,'' {\em Annual
   Review of Materials Research}, vol.~38, pp.~435--443, 2008.
 
-\bibitem{Cunningham1993}
-S.~Cunningham and P.~Denize, ``A tool for model generation and knowledge
-  acquisition,'' in {\em Proc International Workshop on Artificial Intelligence
-  and Statistics}, (Fort Lauderdale, Florida, USA), pp.~213--222, 1993.
-
-\bibitem{Holmes1993}
-G.~Holmes and S.~Cunningham, ``Using data mining to support the construction
-  and maintenance of expert systems,'' in {\em Proc Artificial Neural Networks
-  and Expert Systems}, (Dunedin, New Zealand), pp.~156--159, 1993.
-
-\bibitem{Holmes1993_2}
-G.~Holmes and S.~Cunningham, ``Expert systems development using data mining,''
-  in {\em Proc Expert Systems '93}, (Cambridge, England), pp.~213--222, 1993.
-
-\bibitem{Witten1993}
-I.~Witten, S.~Cunningham, G.~Holmes, R.~McQueen, and L.~Smith, ``Practical
-  machine learning and its potential application to problems in agriculture,''
-  in {\em Proc New Zealand Computer Conference}, vol.~1, (Auckland, New
-  Zealand), pp.~308--325, 1993.
+\bibitem{Weka}
+M.~Hall, E.~Frank, G.~Holmes, B.~Pfahringer, P.~Reutemann, and I.~H. Witten,
+  ``The weka data mining software: An update,'' {\em SIGKDD Explorations},
+  vol.~11, pp.~10--18, 2009.
 
 \end{thebibliography}
