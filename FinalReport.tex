@@ -153,6 +153,30 @@ Histograms of the porosity calculations are shown in Figure \ref{fig:DataHist}. 
 	\label{tab:OneWay}%
 \end{table}%
 
+\begin{table}[htbp]
+	% table caption is above the table
+	\caption{Tukey's HSD multiple Comparisons Results}
+	\label{tab:mult}       % Give a unique label
+	% For LaTeX tables use
+	\begin{tabular}{lll}
+		\hline\noalign{\smallskip}
+		Method & $p_{value}$ \\
+		\noalign{\smallskip}\hline\noalign{\smallskip}
+		Manual and 2D & 0 \\
+		Manual and 3D & 0 \\
+		Manual and 2D$+$EE & 0 \\
+		Manual and 3D$+$EE & 0.0809 \\
+		2D and 3D & 0 \\
+		2D and 2D$+$EE & 0 \\
+		2D and 3D$+$EE & 0 \\
+		3D and 2D$+$EE & 0 \\
+		3D and 3D$+$EE & 0 \\
+		2D$+$EE and 3D$+$EE & 0.0182 \\
+		\noalign{\smallskip}\hline
+	\end{tabular}
+	\centering
+\end{table}
+
 Histograms of percent error calculations in Figure \ref{fig:DiffHist} show that these data are normally distributed. This difference, with respect to the distribution of raw porosity data, can be understood by considering that the percent difference is no longer highly dependent on the image content, but rather on the segmentation method. This allows the percent error to be considered a random variable for further analysis. Mean error and standard deviation are listed in Table \ref{tab:DiffTable}. As expected from the prior analysis, the 3-D WEKA segmentation with edge erosion algorithm displayed the lowest error and standard deviation, indicating that it is the desired method of analysis. 
 
 \begin{figure}[H]

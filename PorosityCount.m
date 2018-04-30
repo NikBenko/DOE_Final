@@ -1,5 +1,6 @@
 close all
 clear all
+clc
 
 L=499;
 manualCount=zeros(L,1);
@@ -51,11 +52,12 @@ erode3DPorosity=erode3DCount./(L^2);
 %% Plots
 figure;
 hold on
-plot(1:L,manualPorosity,1:L,auto2DPorosity,1:L,auto3DPorosity,1:L,erode2DPorosity,1:L,erode3DPorosity)
+plot(1:L,manualPorosity*100,1:L,auto2DPorosity*100,1:L,auto3DPorosity*100,1:L,erode2DPorosity*100,1:L,erode3DPorosity*100,'linewidth',2); grid on;
+set(gca,'fontsize',17);
 hold off
-legend('Manual','Auto2D','Auto3D','Erode2D','Erode3D')
-xlabel('Image Number')
-ylabel('Porosity')
+legend('\bfManual','\bf2D','\bf3D','\bf2D+EE','\bf3D+EE')
+xlabel('\bf Image Number','fontsize',20)
+ylabel('\bf Percent Porosity','fontsize',20)
 %% One Way Anova and Tukey's HSD
 
 Data=[manualPorosity,auto2DPorosity,auto3DPorosity,erode2DPorosity,erode3DPorosity];
@@ -134,12 +136,12 @@ figure; imshow(uint8(overlay))
 
 %% Histograms
 figure;
-h1=hist(Data(:,1));
+h1=histogram(Data(:,1));
 hold on
-h2=hist(Data(:,2));
-h3=hist(Data(:,3));
-h4=hist(Data(:,4));
-h5=hist(Data(:,5));
+h2=histogram(Data(:,2));
+h3=histogram(Data(:,3));
+h4=histogram(Data(:,4));
+h5=histogram(Data(:,5));
 
 h1.Normalization = 'probability';
 h2.Normalization = 'probability';
@@ -147,17 +149,17 @@ h3.Normalization = 'probability';
 h4.Normalization = 'probability';
 h5.Normalization = 'probability';
 
-xlabel('Porosity')
-ylabel('Probability')
+xlabel('\bfPorosity')
+ylabel('\bfProbability')
 set(gca,'FontSize',16)
-legend('Manual','Auto2D','Auto3D','Erode2D','Erode3D')
+legend('Manual','2D','3D','2D+EE','3D+EE')
 %% Diff Histograms
 figure;
-h1=hist(Diff(:,1));
+h1=histogram(Diff(:,1));
 hold on
-h2=hist(Diff(:,2));
-h3=hist(Diff(:,3));
-h4=hist(Diff(:,4));
+h2=histogram(Diff(:,2));
+h3=histogram(Diff(:,3));
+h4=histogram(Diff(:,4));
 
 
 h1.Normalization = 'probability';
@@ -166,10 +168,10 @@ h3.Normalization = 'probability';
 h4.Normalization = 'probability';
 
 
-xlabel('% Error')
-ylabel('Probability')
+xlabel('\bf% Error')
+ylabel('\bfProbability')
 set(gca,'FontSize',16)
-legend('Auto2D','Auto3D','Erode2D','Erode3D')
+legend('2D','3D','2D+EE','3D+EE')
 title('Difference Histograms')
 %%
 
