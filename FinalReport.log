@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.20)  30 APR 2018 10:36
-=======
-<<<<<<< HEAD
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.4.26)  30 APR 2018 13:33
-=======
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.20)  30 APR 2018 10:35
->>>>>>> 80da716819e489ff97e932351ba6d4bdca6a5488
->>>>>>> b1d15c945a0934f59a52f39b65effbc6f3b90a53
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2016.12.20)  30 APR 2018 14:17
 entering extended mode
 **./FinalReport.tex
 (FinalReport.tex
@@ -716,10 +708,10 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3]
-<DataHistograms.png, id=77, 421.575pt x 316.18124pt>
+[3] <DataHistograms.png, id=77, 421.575pt x 316.18124pt>
 File: DataHistograms.png Graphic file (type png)
- <use DataHistograms.png>
+
+<use DataHistograms.png>
 Package pdftex.def Info: DataHistograms.png used on input line 121.
 (pdftex.def)             Requested size: 271.0125pt x 203.26231pt.
 
@@ -747,11 +739,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 File: DifferenceHistograms.png Graphic file (type png)
 
 <use DifferenceHistograms.png>
-<<<<<<< HEAD
-Package pdftex.def Info: DifferenceHistograms.png  used on input line 184.
-=======
-Package pdftex.def Info: DifferenceHistograms.png used on input line 160.
->>>>>>> 80da716819e489ff97e932351ba6d4bdca6a5488
+Package pdftex.def Info: DifferenceHistograms.png used on input line 184.
 (pdftex.def)             Requested size: 271.0125pt x 203.26231pt.
 
 Overfull \hbox (5.0pt too wide) in paragraph at lines 184--185
@@ -760,13 +748,8 @@ Overfull \hbox (5.0pt too wide) in paragraph at lines 184--185
 
 <ResponseSurface.png, id=94, 1445.4pt x 724.95844pt>
 File: ResponseSurface.png Graphic file (type png)
-<<<<<<< HEAD
-<use ResponseSurface.png>
-Package pdftex.def Info: ResponseSurface.png  used on input line 213.
-=======
  <use ResponseSurface.png>
-Package pdftex.def Info: ResponseSurface.png used on input line 189.
->>>>>>> 80da716819e489ff97e932351ba6d4bdca6a5488
+Package pdftex.def Info: ResponseSurface.png used on input line 213.
 (pdftex.def)             Requested size: 271.0125pt x 135.92937pt.
 
 Overfull \hbox (5.0pt too wide) in paragraph at lines 213--214
@@ -819,23 +802,13 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 251.
 ### semi simple group (level 1) entered at line 79 (\begingroup)
 ### bottom level 
 Here is how much of TeX's memory you used:
-<<<<<<< HEAD
- 12848 strings out of 493305
- 195047 string characters out of 3138874
- 365432 words of memory out of 3000000
- 16057 multiletter control sequences out of 15000+200000
- 15335 words of font info for 94 fonts, out of 3000000 for 9000
- 1141 hyphenation exceptions out of 8191
- 42i,11n,43p,1386b,1519s stack positions out of 5000i,500n,10000p,200000b,50000s
-=======
- 12729 strings out of 493335
- 192788 string characters out of 3139265
- 364686 words of memory out of 3000000
+ 12730 strings out of 493335
+ 192804 string characters out of 3139265
+ 366756 words of memory out of 3000000
  15920 multiletter control sequences out of 15000+200000
  15335 words of font info for 94 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,11n,43p,1386b,1543s stack positions out of 5000i,500n,10000p,200000b,50000s
->>>>>>> 80da716819e489ff97e932351ba6d4bdca6a5488
+ 42i,11n,43p,1386b,1538s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmb
 x10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 <C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Prog
@@ -847,11 +820,7 @@ blic/amsfonts/cm/cmr17.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsf
 onts/cm/cmsl10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
 cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pf
 b><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-<<<<<<< HEAD
 Output written on FinalReport.pdf (7 pages, 483152 bytes).
-=======
-Output written on FinalReport.pdf (7 pages, 486663 bytes).
->>>>>>> 80da716819e489ff97e932351ba6d4bdca6a5488
 PDF statistics:
  167 PDF objects out of 1000 (max. 8388607)
  35 named destinations out of 1000 (max. 500000)
