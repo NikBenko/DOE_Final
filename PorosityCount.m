@@ -67,8 +67,12 @@ Diff=zeros(length(Data),4);
 for i=1:4
     Diff(:,i)=(Data(:,i+1)-Data(:,1))./Data(:,1)*100;
 end
-
-[p,tbl,stats] = anova1(Data); 
+figure;
+group1={'Manual','2D','3D','2D+EE','3D+EE'};
+[p,tbl,stats] = anova1(100*Data,group1); 
+ylabel('Percent Porosity')
+set(gca,'FontSize',14)
+%%
 [c,m,h,gnames] = multcompare(stats);
 %% 2 Way Anova
 group1=cell(4*L,1);
